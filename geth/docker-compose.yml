@@ -17,7 +17,7 @@ services:
       - "8545:8545"
 
   geth-netstats:
-    image: geth-netstats
+    image: eth-netstats
     cpu_quota: 50000
     restart: on-failure
     environment:
