@@ -12,7 +12,7 @@ RUN apk add --no-cache --virtual .build-deps  \
     rm -rf /go-ethereum
 
 RUN apk add --no-cache --virtual .build-deps  \
-	    git && \
+	    go git make gcc musl-dev && \
 	cd /root && \
     git clone https://github.com/cubedro/eth-net-intelligence-api && \
     cd eth-net-intelligence-api && \
