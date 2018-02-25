@@ -1,7 +1,7 @@
 version: '2'
 services:
   geth:
-    image: daocloud.io/daocloud/geth
+    image: shiyongabc/geth
     cpu_quota: 50000
     restart: on-failure
     environment:
