@@ -3,18 +3,16 @@ FROM node:alpine
 MAINTAINER DCS <dao@daocloud.io>
 
 ENV GETH_VER v1.5.4
-ADD go-ethereum/ /go-ethereum
 RUN apk add --no-cache --virtual .build-deps  \
 	    go git make gcc musl-dev && \
-##    git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
-    cd /go-ethereum && \
-    chmod -R +x /go-ethereum/build && \
-    make geth && \
+    git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
+    cd go-ethereum && git checkout $GETH_VER && make geth && \
     cp /go-ethereum/build/bin/geth /usr/bin/geth && \
     apk del .build-deps && rm -rf ~/.cache && \
     rm -rf /go-ethereum
 
 RUN apk add --no-cache --virtual .build-deps  \
+	    git && \
 	cd /root && \
     git clone https://github.com/cubedro/eth-net-intelligence-api && \
     cd eth-net-intelligence-api && \

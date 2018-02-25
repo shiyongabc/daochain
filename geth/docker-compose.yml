@@ -5,7 +5,7 @@ services:
     cpu_quota: 50000
     restart: on-failure
     environment:
-      - WS_SERVER ws://127.0.0.1:80
+      - WS_SERVER ws://127.0.0.1:3000
       - WS_SECRET daocloud-eth-net-stats-secret
     volumes:
       - ${HOME}/.ethereum/keystore:/root/.ethereum/keystore
