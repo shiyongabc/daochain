@@ -7,7 +7,7 @@ ADD go-ethereum/ /go-ethereum
 RUN apk add --no-cache --virtual .build-deps  \
 	    go git make gcc musl-dev && \
 ##    git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
-    cd /go-ethereum && chmod +x /go-ethereum/build/env.sh && chmod +x /go-ethereum/Makefile && make geth && \
+    cd /go-ethereum && chmod -R +x /go-ethereum/build && make geth && \
     cp /go-ethereum/build/bin/geth /usr/bin/geth && \
     apk del .build-deps && rm -rf ~/.cache && \
     rm -rf /go-ethereum
