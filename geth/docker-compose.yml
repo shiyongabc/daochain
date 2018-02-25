@@ -1,0 +1,18 @@
+version: '2'
+services:
+  geth:
+    image: daocloud.io/daocloud/geth
+    cpu_quota: 50000
+    restart: on-failure
+    environment:
+      - WS_SERVER ws://127.0.0.1:80
+      - WS_SECRET daocloud-eth-net-stats-secret
+    volumes:
+      - ${HOME}/.ethereum/keystore:/root/.ethereum/keystore
+      - /etc/localtime:/etc/localtime:ro
+      - ${HOME}/.ethash:/root/.ethash
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+
