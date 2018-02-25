@@ -16,3 +16,13 @@ services:
       - "30303:30303/udp"
       - "8545:8545"
 
+  geth-netstats:
+    image: net-netstats
+    cpu_quota: 50000
+    restart: on-failure
+    environment:
+      - WS_SECRET daocloud-eth-net-stats-secret
+    ports:
+      - "3000:3000"
+ 
+
