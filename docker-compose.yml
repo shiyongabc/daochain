@@ -1,11 +1,11 @@
 version: '2'
 services:
   geth:
-    image: daocloud.io/daocloud/geth
+    image: shiyongabc/geth
     cpu_quota: 50000
     restart: on-failure
     environment:
-      - WS_SERVER ws://blockchain.daocloud.io:80
+      - WS_SERVER ws://127.0.0.1:80
       - WS_SECRET daocloud-eth-net-stats-secret
     volumes:
       - ${HOME}/.ethereum/keystore:/root/.ethereum/keystore
@@ -16,7 +16,7 @@ services:
       - "30303:30303/udp"
       - "8545:8545"
   server:
-    image: daocloud.io/daocloud/daochain
+    image: shiyongabc/daochain
     cpu_quota: 50000
     restart: on-failure
     environment:
