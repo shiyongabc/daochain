@@ -25,4 +25,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${HOME}/.docker:/root/.docker
     ports:
-      - "8000:80"
+      - "3000:80"
