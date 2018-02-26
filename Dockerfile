@@ -30,6 +30,8 @@ RUN apk add --no-cache --virtual .build-deps  \
 ADD . /daocloud
 
 ADD ./dist/* /daocloud/app/static/
+ADD ./dist/js/* /daocloud/app/static/js/
+ADD ./dist/css/* /daocloud/app/static/css/
 
 ENV ETH_RPC_ENDPOINT=geth:8545
 ENV HUB_ENDPOINT=http://127.0.0.1
