@@ -31,7 +31,10 @@ ADD . /daocloud
 
 
 ADD ./dist/js/netstats.min.js /daocloud/app/static/js/netstats.min.js
+ADD ./dist/index.html /daocloud/app/static/index.html
+ADD ./dist/favicon.ico /daocloud/app/static/favicon.ico
 ADD ./dist/css/* /daocloud/app/static/css/
+ADD ./dist/fonts/* /daocloud/app/static/fonts/
 ADD ./dist/js/lib/* /daocloud/app/static/js/lib/
 
 ENV ETH_RPC_ENDPOINT=geth:8545
