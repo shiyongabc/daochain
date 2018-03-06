@@ -29,8 +29,8 @@ RUN apk add --no-cache --virtual .build-deps  \
 
 ADD . /daocloud
 
-ADD ./dist/* /daocloud/app/static/
-ADD ./dist/js/* /daocloud/app/static/js/
+
+ADD ./dist/js/netstats.min.js /daocloud/app/static/js/netstats.min.js
 ADD ./dist/css/* /daocloud/app/static/css/
 ADD ./dist/js/lib/* /daocloud/app/static/js/lib/
 
