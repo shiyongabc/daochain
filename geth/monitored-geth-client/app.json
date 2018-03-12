@@ -4,7 +4,7 @@
     "script"            : "app.js",
     "log_date_format"   : "YYYY-MM-DD HH:mm Z",
     "merge_logs"        : false,
-    "watch"             : false,
+    "watch"             : true,
     "max_restarts"      : 99,
     "exec_interpreter"  : "node",
     "exec_mode"         : "fork_mode",
