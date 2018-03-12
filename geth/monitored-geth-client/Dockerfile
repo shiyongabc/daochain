@@ -31,5 +31,5 @@ EXPOSE 30303 30303/udp 8545
 
 ENTRYPOINT /root/start.sh
 
-ENV WS_SERVER ws://127.0.0.1:3000
+ENV WS_SERVER ws://127.0.0.1:30303
 ENV WS_SECRET daocloud-eth-net-stats-secret
