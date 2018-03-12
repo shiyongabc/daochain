@@ -2,7 +2,7 @@ FROM node:alpine
 
 MAINTAINER DCS <dao@daocloud.io>
 
-ENV GETH_VER v1.8.2
+ENV GETH_VER v1.8.0
 RUN apk add --no-cache --virtual .build-deps  \
 	    go git make gcc musl-dev && \
     git clone https://github.com/ethereum/go-ethereum /go-ethereum && \
